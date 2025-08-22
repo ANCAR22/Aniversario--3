@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carta Especial</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <audio id="musica-carta" src="musica/cancion.mp3" autoplay loop></audio>
+    <div id="sobre">
+        <div class="sobre-tapa">
+            <svg viewBox="0 0 220 80">
+                <polygon points="0,80 110,0 220,80" fill="#b39ddb" stroke="#7c43bd" stroke-width="2"/>
+            </svg>
+        </div>
+        <div class="sobre-cuerpo"></div>
+    </div>
+    <div id="carta">
+        <div id="mensaje-carta">
+            <!-- Tu mensaje aquí -->
+            Mi amor, mi princesa hermosa, mi niña, mi reina, mi todo, hoy celebramos un año más de nuestro amor.<br>
+            Mi amor, gracias por cada momento juntos. Es mi felicidad y mi razón de ser.<br>
+            La amo con todo mi corazón...
+        </div>
+    </div>
+    <div class="indicacion">Presiona el sobre para abrir la carta</div>
+    <script>
+        window.addEventListener('click', function() {
+            const audio = document.getElementById('musica-carta');
+            if (audio.paused) audio.play();
+        });
+
+        const sobre = document.getElementById('sobre');
+        const carta = document.getElementById('carta');
+        sobre.onclick = function() {
+            sobre.classList.add('abierto');
+            carta.style.opacity = '1';
+            carta.style.top = '30%';
+            carta.style.transform = 'translate(-50%, -50%) scale(1.05)';
+            document.querySelector('.indicacion').style.display = 'none';
+        };
+    </script>
+</body>
+</html>

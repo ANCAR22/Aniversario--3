@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ramo de Rosas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000000;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        #rosas {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background: transparent;
+        }
+        #carrusel {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 350px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: none;
+            background: transparent;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #carrusel img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: none;
+        border-radius: 20px; /* Bordes redondeados */
+        box-shadow: 0 4px 24px #fff8; /* Sombra suave */
+        background: rgba(255,255,255,0.05);
+        transition: box-shadow 0.3s, transform 0.3s;
+}
+#carrusel img.active {
+    display: block;
+    transform: scale(1.04);
+    box-shadow: 0 8px 32px #fff9;
+}
+        .mariposa {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            animation: vuelo 8s linear infinite;
+        }
+        @keyframes vuelo {
+            0% { transform: translateY(0) scale(1) rotate(0deg);}
+            50% { transform: translateY(-100px) scale(1.1) rotate(20deg);}
+            100% { transform: translateY(0) scale(1) rotate(-20deg);}
+        }
+    </style>
+</head>
+<body>
+    <h1 id="aniversario-titulo">Feliz aniversario mi amor</h1>
+    <audio id="musica-fondo" src="musica/cancion.mp3" autoplay loop></audio>
+    <canvas id="rosas" width="400" height="400"></canvas>
+    <div id="carrusel">
+        <img src="images/img1.jpeg" class="active" alt="Imagen 1">
+        <img src="images/img10.jpeg" alt="Imagen 2">
+        <img src="images/img11.jpeg" alt="Imagen 3">
+        <img src="images/img12.jpeg" alt="Imagen 4">
+        <img src="images/img13.jpeg" alt="Imagen 5">
+        <img src="images/img5.jpeg" alt="Imagen 6">
+        <img src="images/img4.jpeg" alt="Imagen 7">
+        <img src="images/img6.jpeg" alt="Imagen 8">
+        <img src="images/img7.jpeg" alt="Imagen 9">
+        <img src="images/img8.jpeg" alt="Imagen 10">
+        <img src="images/img9.jpeg" alt="Imagen 11">
+    </div>
+    <script src="Js/rosas.js"></script>
+</body>
+</html>

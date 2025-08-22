@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Aniversario Mi Amor</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        h1 {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+            text-shadow: 0 0 20px #fff;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz Aniversario Mi amor</h1>
+    <div style="position: absolute; bottom: 7%; left: 50%; transform: translateX(-50%); display: flex; gap: 2em; z-index: 2;">
+        <button id="btn-carta" style="padding: 1em 2em; font-size: 1.2em; background: linear-gradient(90deg,#7c43bd,#b39ddb); color: #fff; border:none; border-radius:20px; cursor:pointer; box-shadow:0 0 10px #b39ddb;">Ver carta especial</button>
+        <button onclick="window.location.href='rosas.html'" style="padding: 1em 2em; font-size: 1.2em; background: linear-gradient(90deg, #ff69b4, #ffb6c1); color: #fff; border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 0 10px #fff;">Ir a la sorpresa</button>
+    </div>
+    <audio id="musica-fondo" src="musica/cancion.mp3" loop></audio>
+    <script src="Js/second.js"></script>
+    <script>
+        document.getElementById('btn-carta').onclick = () => window.location.href = 'carta.html';
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById('musica-fondo');
+            if (audio.paused) {
+                audio.volume = 0.5;
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
